@@ -65,7 +65,7 @@ const BalanceCalculate = () => {
   useEffect(() => {}, []);
 
   useEffect(() => {
-    const  caluclate = () => {
+    function caluclate() {
     setDiffDragCash(dragCashappEnd - dragCashappStart);
     setDiffJessicaCash(jessicaCashappEnd - jessicaCashappStart);
     setDiffDragFire(dragFireStart - dragFireEnd);
