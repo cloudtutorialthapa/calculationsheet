@@ -62,10 +62,10 @@ const BalanceCalculate = () => {
     console.log('is onSubmitfrom clicked');
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {caluclate();}, []);
 
   useEffect(() => {
-    caluclate();
+    
     console.log('useEffect');
   }, [
     diffDragCash,
