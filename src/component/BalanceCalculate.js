@@ -62,9 +62,20 @@ const BalanceCalculate = () => {
     console.log('is onSubmitfrom clicked');
   };
 
-  useEffect(() => {caluclate();}, []);
+  useEffect(() => {}, []);
 
   useEffect(() => {
+    const  caluclate = () => {
+    setDiffDragCash(dragCashappEnd - dragCashappStart);
+    setDiffJessicaCash(jessicaCashappEnd - jessicaCashappStart);
+    setDiffDragFire(dragFireStart - dragFireEnd);
+    setDiffJessicaCoin(jessicaFireStart - jessicaFireEnd);
+    setDiffJuwaCoin(juwaStart - juwaEnd);
+    setCoinIncome(diffDragFire + diffJesscaCoin + diffJuwaCoin);
+    setCashIncome(diffDragCash + diffJessicaCash + oldCashapp - otherCashout);
+    setBalance(cashIncome - coinIncome);
+  };
+    calculate();
     
     console.log('useEffect');
   }, [
@@ -104,16 +115,7 @@ const BalanceCalculate = () => {
     console.log('is onSubmitfrom clicked');
   };
 
-  function caluclate() {
-    setDiffDragCash(dragCashappEnd - dragCashappStart);
-    setDiffJessicaCash(jessicaCashappEnd - jessicaCashappStart);
-    setDiffDragFire(dragFireStart - dragFireEnd);
-    setDiffJessicaCoin(jessicaFireStart - jessicaFireEnd);
-    setDiffJuwaCoin(juwaStart - juwaEnd);
-    setCoinIncome(diffDragFire + diffJesscaCoin + diffJuwaCoin);
-    setCashIncome(diffDragCash + diffJessicaCash + oldCashapp - otherCashout);
-    setBalance(cashIncome - coinIncome);
-  }
+  
   const onSubmitform = (e) => {
     e.preventDefault();
     console.log('is onSubmitfrom clicked');
