@@ -67,7 +67,7 @@ const BalanceCalculate = () => {
   useEffect(() => {
    
     calculate();
-   // eslint-disable-next-line react-hooks/exhaustive-deps
+
     console.log('useEffect');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
