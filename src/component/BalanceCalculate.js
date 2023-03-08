@@ -65,19 +65,11 @@ const BalanceCalculate = () => {
   useEffect(() => {}, []);
 
   useEffect(() => {
-    function caluclate() {
-    setDiffDragCash(dragCashappEnd - dragCashappStart);
-    setDiffJessicaCash(jessicaCashappEnd - jessicaCashappStart);
-    setDiffDragFire(dragFireStart - dragFireEnd);
-    setDiffJessicaCoin(jessicaFireStart - jessicaFireEnd);
-    setDiffJuwaCoin(juwaStart - juwaEnd);
-    setCoinIncome(diffDragFire + diffJesscaCoin + diffJuwaCoin);
-    setCashIncome(diffDragCash + diffJessicaCash + oldCashapp - otherCashout);
-    setBalance(cashIncome - coinIncome);
-  };
+   
     calculate();
-    
+   // eslint-disable-next-line react-hooks/exhaustive-deps
     console.log('useEffect');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     diffDragCash,
     diffJessicaCash,
@@ -89,6 +81,17 @@ const BalanceCalculate = () => {
     status,
     balance,
   ]);
+  
+   function caluclate() {
+    setDiffDragCash(dragCashappEnd - dragCashappStart);
+    setDiffJessicaCash(jessicaCashappEnd - jessicaCashappStart);
+    setDiffDragFire(dragFireStart - dragFireEnd);
+    setDiffJessicaCoin(jessicaFireStart - jessicaFireEnd);
+    setDiffJuwaCoin(juwaStart - juwaEnd);
+    setCoinIncome(diffDragFire + diffJesscaCoin + diffJuwaCoin);
+    setCashIncome(diffDragCash + diffJessicaCash + oldCashapp - otherCashout);
+    setBalance(cashIncome - coinIncome);
+  };
 
   const onReset = (e) => {
     e.preventDefault();
